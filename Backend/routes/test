@@ -1,0 +1,37 @@
+const express = require('express');
+
+let Appointment = require('../models/appointment.model');
+const router = express.Router();
+
+const url = "mongodb://localhost:27017/DentalApp"
+
+mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
+//first flag => mongodb nodejs driver rewrote the tool it uses to parse db connection string
+const connection = mongoose.connection;
+
+//once the connection is open do ...
+connection.once('open', () => {
+    console.log("MongoDb database connection established successfully");
+})
+
+
+router.get('/find', (req, res) => {
+    Appointment.find()
+        .then(data => {
+            console.log('le reeees : ' + data)
+            res.json(data);
+        })
+        .catch(err => res.status(404).json('Error:' + err))
+});
+
+router.post('/submit', (req, res) => {
+    var { fname, lname, email, phone, date, time } = req.body;
+    date = Date.parse(date);
+    const newAppoint = new Appointment({ fname, lname, email, phone, date, time });
+    newAppoint.save()
+        .then(() => console.log('appoint added successfully!!'))
+        .catch(err => console.log(err));
+    res.redirect('/');
+});
+
+module.exports = router;
