@@ -17,8 +17,11 @@ exports.findbyid = (req, res) => {
 //delete by id 
 exports.delete = (req, res) => {
     Appointment.findByIdAndDelete(req.params.id)
-        .then(appoint => res.send({ message: 'Appointment Deleted Successfully' }))
+        .then(appoint => res.redirect('/appointment/dashboard'))
         .catch(err => res.status(500).send({ message: 'Couldn t delete appointment' }));
+    // Appointment.findByIdAndDelete(req.params.id)
+    // .then(appoint => res.send({ message: 'Appointment Deleted Successfully' }))
+    // .catch(err => res.status(500).send({ message: 'Couldn t delete appointment' }));
 };
 
 //update by id 

@@ -9,14 +9,10 @@ const router = express.Router();
 router.get('/dashboard', (req, res) => {
     //make a request to /appointment/dashboard/api/all
     axios.get('http://localhost:5000/appointment/api/all')
-        .then(response => {
-            console.log(response.data)
-            res.render('admin-dashboard', { appoints: response.data })
-        })
+        .then(response => res.render('admin-dashboard', { appoints: response.data }))
         .catch(err => {
             res.send(err)
         })
-
 });
 
 //edit tmp
@@ -25,7 +21,7 @@ router.get('/dashboard', (req, res) => {
 //API 
 router.get('/api/all', controller.findall);
 router.route('/api/:id').get(controller.findbyid);
-router.route('/api/:id').delete(controller.delete);
+router.route('/api/delete/:id').post(controller.delete);
 router.route('/api/update/:id').post(controller.update);
 router.post('/api/submit', controller.add);
 
