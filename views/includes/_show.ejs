@@ -1,16 +1,37 @@
-<tr>
-    <td>
-        <span class="custom-checkbox">
+<% for(let i=0 ; i<appoints.length ; i++) { %>
+    <tr class="tid" title="<%= appoints[i]._id %>">
+        <td>
+            <span class="custom-checkbox">
         <input type="checkbox" id="checkbox1" name="options[]" value="1">
         <label for="checkbox1"></label>
     </span>
-    </td>
-    <td>Thomas Hardy</td>
-    <td>thomashardy@mail.com</td>
-    <td>89 Chiaroscuro Rd, Portland, USA</td>
-    <td>(171) 555-2222</td>
-    <td>
-        <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-        <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-    </td>
-</tr>
+        </td>
+        <td class="tlname">
+            <%= appoints[i].lname %>
+        </td>
+        <td class="tfname">
+            <%= appoints[i].fname %>
+        </td>
+        <td class="temail">
+            <%= appoints[i].email %>
+        </td>
+        <td class="tphone">
+            <%= appoints[i].phone %>
+        </td>
+        <td class="tdate">
+            <%= appoints[i].date %>
+        </td>
+        <td class="ttime">
+            <%= appoints[i].time %>
+        </td>
+        <td>
+            <!-- <a href="/appointment/dashboard/update_user?id=<%=appoints[i]._id %>" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+            <a href="" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a> -->
+            <a class="edit dropedit" data-toggle="modal" data-target="#editEmployeeModal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+            <a class="delete dropdelete" data-toggle="modal" data-target="#deleteEmployeeModal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+
+        </td>
+    </tr>
+    <!-- <%= appoints[i]._id %> -->
+
+    <% } %>

@@ -13,6 +13,8 @@ app.use(express.urlencoded({ extended: false }))
 //register view engine
 app.set('view engine', 'ejs');
 
+//include assets folder
+app.use(express.static('./views/public'));
 
 //Database Settings 
 const url = "mongodb://localhost:27017/DentalApp"

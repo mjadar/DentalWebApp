@@ -23,12 +23,12 @@ exports.delete = (req, res) => {
 
 //update by id 
 exports.update = (req, res) => {
-    Appointment.findByIdAndUpdate(req.params.id, req.body, { useFindAndModify: false })
+    Appointment.findByIdAndUpdate(req.body.id_appoint, req.body)
         .then(appoint => {
             if (!appoint)
                 res.status(404).send({ message: 'cannot update appontment maybe not found' })
             else
-                res.send(appoint)
+                res.redirect('/appointment/dashboard');
         })
         .catch(err => {
             res.status(500).send({ message: "Error Update appointment information" })
@@ -45,5 +45,4 @@ exports.add = (req, res) => {
         .catch(err => {
             res.status(500).send({ message: "Somme error occured while creating appointment" })
         });
-
 };

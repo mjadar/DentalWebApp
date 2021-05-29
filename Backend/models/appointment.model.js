@@ -13,6 +13,8 @@ const appointSchema = new Schema({
     timestamps: true,
 });
 
+mongoose.set('useFindAndModify', false);
+
 //compile schema into model
 const Appointment = mongoose.model('Appointment', appointSchema);
 
