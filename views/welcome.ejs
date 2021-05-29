@@ -13,7 +13,6 @@
 
 <body style="background-color: rgb(68, 67, 67);">
     <div style="background-color: rgb(68, 67, 67);">
-
     </div>
     <div class="container-fluid banner">
         <div class="row">
@@ -26,7 +25,8 @@
                             <a class="nav-link" href="/" style="color: azure;">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/users/register" style="color: azure;">Manage appointments</a>
+                            <!-- // <a class="nav-link" href="/users/register" style="color: azure;">Manage appointments</a> -->
+                            <a class="nav-link" href="/appointment/dashboard" style="color: azure;">Manage appointments</a>
                         </li>
 
                         <li class="nav-item">
@@ -43,16 +43,16 @@
 
     <div style="height: 100vh;width: 100%;
 background-size:cover;background-image:linear-gradient(rgba(0, 0, 0, 0.150),rgba(0, 0, 0, 0.1)),url('https://www.smartsmile.ca/wp-content/uploads/2019/07/iStock-689220014.jpg');">
-</div>  
-     
-        <div style="background-color :rgb(143, 84, 43);">
-            <p style="padding-top:2%;font-size: 37px; text-align: center; color:rgb(218, 218, 218);font-weight :400;">SMILE DENTAL CLINIC</p>
+    </div>
+
+    <div style="background-color :rgb(143, 84, 43);">
+        <p style="padding-top:2%;font-size: 37px; text-align: center; color:rgb(218, 218, 218);font-weight :400;">SMILE DENTAL CLINIC</p>
         <div style="border: 7px solid #c78531; border-radius: 5px; margin-left: 20%; margin-right: 20%;"></div>
         <br>
-           <p style="color:antiquewhite; text-align: center;">We care about customer care</p>
-           <br>
-        </div>
-    
+        <p style="color:antiquewhite; text-align: center;">We care about customer care</p>
+        <br>
+    </div>
+
 
     <div class="row mt-5">
         <div>
@@ -61,7 +61,7 @@ background-size:cover;background-image:linear-gradient(rgba(0, 0, 0, 0.150),rgba
                     <i class="fas fa-user-plus"></i> Make An Appointment
                 </h3>
 
-                <form action="/appointment/submit" method="post">
+                <form action="/appointment/api/submit" method="post">
                     <div class="form-group">
                         <label for="fname" style="color:white">First Name</label>
                         <input type="text" id="name" name="fname" class="form-control" placeholder="Enter First Name" required/>

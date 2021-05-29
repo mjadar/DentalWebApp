@@ -1,24 +1,20 @@
 const express = require('express');
 let Appointment = require('../models/appointment.model');
+const controller = require('../controller/controller');
 const router = express.Router();
 
-router.get('/find', (req, res) => {
-    Appointment.find()
-        .then(data => {
-            console.log('le reeees : ' + data)
-            res.json(data);
-        })
-        .catch(err => res.status(404).json('Error:' + err))
+
+router.get('/dashboard', (req, res) => {
+    res.render('admin-dashboard', { users: "new data" })
 });
 
-router.post('/submit', (req, res) => {
-    var { fname, lname, email, phone, date, time } = req.body;
-    date = Date.parse(date);
-    const newAppoint = new Appointment({ fname, lname, email, phone, date, time });
-    newAppoint.save()
-        .then(() => console.log('appoint added successfully!!'))
-        .catch(err => console.log(err));
-    res.redirect('/');
-});
+
+
+//API 
+router.get('/api/all', controller.findall);
+router.route('/api/:id').get(controller.findbyid);
+router.route('/api/:id').delete(controller.delete);
+router.route('/api/update/:id').put(controller.update);
+router.post('/api/submit', controller.add);
 
 module.exports = router;
