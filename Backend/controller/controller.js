@@ -3,17 +3,15 @@ let Appointment = require('../models/appointment.model');
 //get * appointments
 exports.findall = (req, res) => {
     Appointment.find()
-        .then(data => {
-            res.json(data);
-        })
-        .catch(err => res.status(400).json('Error:' + err))
+        .then(appoint => res.send(appoint))
+        .catch(err => res.status(500).send({ message: 'Cannot get all appointment' }));
 };
 
 //get by id 
 exports.findbyid = (req, res) => {
     Appointment.findById(req.params.id)
         .then(appoint => res.send(appoint))
-        .catch(err => res.status(500).json('Error: ' + err));
+        .catch(err => res.status(500).send({ message: 'Cannot get single appointment' }));
 };
 
 //delete by id 

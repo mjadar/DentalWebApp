@@ -1,10 +1,12 @@
 const express = require('express');
 let Appointment = require('../models/appointment.model');
 const controller = require('../controller/controller');
+const axios = require('axios')
 const router = express.Router();
 
 
 router.get('/dashboard', (req, res) => {
+    //make a request to /dashboard/api/
     res.render('admin-dashboard', { users: "new data" })
 });
 
