@@ -12,92 +12,65 @@
 </head>
 
 <body style="background-color: rgb(68, 67, 67);">
-    <div style="background-color: rgb(68, 67, 67);">
-    </div>
-    <div class="container-fluid banner">
-        <div class="row">
-            <div class="col-md-12">
-                <nav class="navbar navbar-md">
-                    <div style="color: azure;font-size:22px;" href="#">SMILE</div>
+    <%- include('./includes/_navbar') %>
 
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/" style="color: azure;">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- // <a class="nav-link" href="/users/register" style="color: azure;">Manage appointments</a> -->
-                            <a class="nav-link" href="/appointment/dashboard" style="color: azure;">Manage appointments</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="color: azure;">ABOUT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/users/login" style="color: azure;">LOGIN</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
-
-    <div style="height: 100vh;width: 100%;
+        <div style="height: 100vh;width: 100%;
 background-size:cover;background-image:linear-gradient(rgba(0, 0, 0, 0.150),rgba(0, 0, 0, 0.1)),url('https://www.smartsmile.ca/wp-content/uploads/2019/07/iStock-689220014.jpg');">
-    </div>
+        </div>
 
-    <div style="background-color :rgb(143, 84, 43);">
-        <p style="padding-top:2%;font-size: 37px; text-align: center; color:rgb(218, 218, 218);font-weight :400;">SMILE DENTAL CLINIC</p>
-        <div style="border: 7px solid #c78531; border-radius: 5px; margin-left: 20%; margin-right: 20%;"></div>
-        <br>
-        <p style="color:antiquewhite; text-align: center;">We care about customer care</p>
-        <br>
-    </div>
+        <div style="background-color :rgb(143, 84, 43);">
+            <p style="padding-top:2%;font-size: 37px; text-align: center; color:rgb(218, 218, 218);font-weight :400;">SMILE DENTAL CLINIC</p>
+            <div style="border: 7px solid #c78531; border-radius: 5px; margin-left: 20%; margin-right: 20%;"></div>
+            <br>
+            <p style="color:antiquewhite; text-align: center;">We care about customer care</p>
+            <br>
+        </div>
 
 
-    <div id="form-appoint" class="row mt-5">
-        <div>
+        <div id="form-appoint" class="row mt-5">
             <div>
-                <h3 class="text-center mb-3" style="color:#c78531">
-                    <i class="fas fa-user-plus"></i> Make An Appointment
-                </h3>
+                <div>
+                    <h3 class="text-center mb-3" style="color:#c78531">
+                        <i class="fas fa-user-plus"></i> Make An Appointment
+                    </h3>
 
-                <form action="/appointment/api/submit" method="post">
-                    <div class="form-group">
-                        <label for="fname" style="color:white">First Name</label>
-                        <input type="text" id="name" name="fname" class="form-control" placeholder="Enter First Name" required/>
-                    </div>
-                    <div class="form-group">
-                        <label for="lname" style="color:white">Last Name</label>
-                        <input type="text" id="name" name="lname" class="form-control" placeholder="Enter Last Name" required/>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" style="color:white">Email</label>
-                        <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="phone" style="color:white">Phone Number</label>
-                        <input type="phone" id="phone" name="phone" class="form-control" placeholder="Enter Phone Number" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="date" style="color:white">Date</label>
-                        <input type="date" id="date" name="date" class="form-control" placeholder="Add a date " />
-                    </div>
-                    <div class="form-group">
-                        <label for="hour" style="color:white">Hour</label>
-                        <input type="time" id="hour" name="time" min="08:00" max="18:00" class="form-control" placeholder="Add an hour " />
-                    </div>
+                    <form action="/appointment/api/submit" method="post">
+                        <div class="form-group">
+                            <label for="fname" style="color:white">First Name</label>
+                            <input type="text" id="name" name="fname" class="form-control" placeholder="Enter First Name" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="lname" style="color:white">Last Name</label>
+                            <input type="text" id="name" name="lname" class="form-control" placeholder="Enter Last Name" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" style="color:white">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" style="color:white">Phone Number</label>
+                            <input type="phone" id="phone" name="phone" class="form-control" placeholder="Enter Phone Number" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="date" style="color:white">Date</label>
+                            <input type="date" id="date" name="date" class="form-control" placeholder="Add a date " />
+                        </div>
+                        <div class="form-group">
+                            <label for="hour" style="color:white">Hour</label>
+                            <input type="time" id="hour" name="time" min="08:00" max="18:00" class="form-control" placeholder="Add an hour " />
+                        </div>
 
-                    <button type="submit " class="btn btn-primary btn-block ">
+                        <button type="submit " class="btn btn-primary btn-block ">
             Confirm
           </button>
-                </form>
+                    </form>
 
+                </div>
             </div>
         </div>
-    </div>
-    <div>
-        <br>
-    </div>
+        <div>
+            <br>
+        </div>
 </body>
 
 </html>
