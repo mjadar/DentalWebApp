@@ -117,16 +117,107 @@ router.get('/login', isLoggedOut,(req,res)=>{
     }
     res.render('login', response);
 });
+/*
+
+router.post('/login', (req,res,next)=>{
+    passport.authenticate('local', function(err,user,info){
+        if(err){
+            console.log('ereuuur');
+            return res.status(401).json(err);
+            
+        }
+        if (user) {
+            console.log('working');
+            const token = user.generateJwt();
+            return res.status(200).json({
+                "token": token
+            });
+        } else {
+            console.log('eeeeelse');
+            res.status(401).json(info);
+        }
+    })(req, res, next)
+});
+*/
 
 
+/*router.post('/login', passport.authenticate('local',{
+    successRedirect: '/',
+    failureRedirect: '/users/login?error=true'
+}));*/
+/*
+router.post('/login',function(req,res,next){
+    passport.authenticate('local')(req, res, function () {
+        req.session.save(function (err) {
+            if (err) {
+                return next(err);
+            }
+            res.redirect('/');
+        });
+    });
+} );
+
+*/
+/*
+router.post('/login', (req, res, next) => {
+    passport.authenticate('local',
+    (err, user, info) => {
+      if (err) {
+        return next(err);
+      }
+  
+      if (!user) {
+        return res.redirect('/users/login?info=' + info);
+      }
+  
+      req.logIn(user, function(err) {
+        if (err) {
+          return next(err);
+        }
+  
+        return res.redirect('/');
+      });
+  
+    })(req, res, next);
+  });
+
+*/
 router.post("/login", function(req, res) {
- 
-    if (req.body.email=="ensadentalapp.sec@gmail.com" &&  req.body.password == "pass"){
-        res.redirect("/appointment/dashboard");
+
+
+
+    const user = new User({
+    email: req.body.email, 
+    password: req.body.password
+    });
+    
+    
+    console.log(user);
+    
+    req.logIn(user, function(err) {
+
+        console.log(user);
+    
+    if (err) {
+    
+    console.log(err);
+    
+    } else {
+    
+    passport.authenticate("local")(req, res, function() {
+    
+    
+    
+    res.redirect("/");
+    
+    });
+    
     }
-    else {
-        res.redirect("/users/login");
-    }    
+    
+    });
+    
+    
+    
     });
     
     

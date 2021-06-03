@@ -30,6 +30,7 @@ connection.once('open', () => {
 app.use('/', require('./Backend/routes/index'));
 app.use('/users', require('./Backend/routes/users'));
 app.use('/appointment', require('./Backend/routes/appointment'))
-
+app.use('/contact', require('./Backend/routes/contact'))
+app.use('/about', require('./Backend/routes/about'))
 
 app.listen(PORT, console.log(`Server started on port ${PORT}`));

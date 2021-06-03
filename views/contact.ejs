@@ -1,0 +1,112 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/solid.min.css">
+    <link rel="stylesheet" href="/css/style_ilias.css">
+</head>
+<body>
+    <section class= "contact" >
+        <div class="content">
+            <h2 style="color: azure;">Contact Us</h2>
+            <p style="color: azure;">
+                Contact us to get more informations.
+            </p>
+        </div>
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon"><i class="fa fa-map-marker"  aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p style="color: azure;">Ensa Tangier, Boukhalef Tangier, Morocco</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-phone fa-rotate-90"  aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p style="color: azure;">06 00 00 00 00</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-comments"  aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>E-mail</h3>
+                        <p style="color: azure;">ilias.maztaoui@uae.ac.ma</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="contactForm">
+                <form action="">
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <input type="text" id="name" name="" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="email" id="email" name="" required="required">
+                        <span>E-Mail</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" id="subject" name="" required="required">
+                        <span>Subject</span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea id="message" required="required"></textarea>
+                        <span>Enter your message...</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" name="" value="Send Message">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+
+const contactForm = document.querySelector('.contactForm');
+let name1 = document.getElementById('name');
+let email = document.getElementById('email');
+let subject = document.getElementById('subject');
+let message = document.getElementById('message');
+
+if(contactForm)
+contactForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+
+    let formData = {
+        name: name1.value,
+        email: email.value,
+        subject: subject.value,
+        message: message.value
+    }
+
+    console.log(formData)
+
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', '/contact');
+    xhr.setRequestHeader('content-type', 'application/json');
+    xhr.onload = function(){
+        console.log(xhr.responseText);
+        if(xhr.responseText == 'success'){
+            alert('Email sent');
+            name1.value = '';
+            email.value='';
+            subject.value = '';
+            message.value = '';
+        }else {
+            alert('Something went wrong');
+        }
+    }
+
+    xhr.send(JSON.stringify(formData));
+
+})
+    </script>
+</body>
+</html>
