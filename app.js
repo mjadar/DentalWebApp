@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: false }))
 
 
 //register view engine
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs');//test
 
 //include assets folder
 app.use(express.static('./views/public'));
