@@ -7,7 +7,7 @@
 
 //on click on button edit in dashboard table
 $('.dropedit').click(function() {
-    const id = $('.tid').attr('title');
+    const id = $(this).parents("tr").find(".tid").text().trim();
     const fname = $(this).parents("tr").find(".tlname").text().trim();
     const lname = $(this).parents("tr").find(".tfname").text().trim();
     const phone = $(this).parents("tr").find(".tphone").text().trim();
@@ -26,7 +26,7 @@ $('.dropedit').click(function() {
 
 //onclick on button delete in dashboard table
 $('.dropdelete').click(function() {
-    const id = $('.tid').attr('title');
+    const id = $(this).parents("tr").find(".tid").text().trim();
     $('#form_delete').attr('action', '/appointment/api/delete/' + id);
 });
 

@@ -1,6 +1,9 @@
 <% for(let i=0 ; i<appoints.length ; i++) { %>
-    <tr class="tid" title="<%= appoints[i]._id %>">
+    <tr class="tid">
         </span>
+        </td>
+        <td class="tid" style="display: none;">
+            <%= appoints[i]._id %>
         </td>
         <td class="tlname">
             <%= appoints[i].lname %>
