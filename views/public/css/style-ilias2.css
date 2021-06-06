@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Allura|Josefin+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
 
 *{
   margin: 0;
@@ -7,18 +7,22 @@
 }
 
 body{
-  background: rgb(68, 67, 67);
-  font-family: 'Josefin Sans', sans-serif;
-}
+  background-image: linear-gradient(rgba(0, 0, 0, 0.800), rgba(0, 0, 0, 0)), url(https://www.smartsmile.ca/wp-content/uploads/2019/07/iStock-689220014.jpg);
+  background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+  height: 120vh;}
 
 .wrapper{
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .wrapper h1{
-  font-family: 'Allura', cursive;
-  font-size: 52px;
-  margin-bottom: 60px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 49px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -47,6 +51,7 @@ body{
   line-height: 20px;
   color: #8e8b8b;  
   position: relative;
+ 
 }
 
 .team .team_member h3{
@@ -77,4 +82,9 @@ body{
   width: 100px;
   height: 100px;
   padding: 5px;
+}
+.logo {
+  margin-top: -795px;
+  margin-left: 0px;
+ 
 }

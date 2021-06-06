@@ -1,76 +1,435 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewreport" content="width=device-width, initial-scale=1.0">
-    <title>
-
-    </title>
-    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css" />
-
+    <meta charset="UTF-8">
+    <title>How to Create responsive Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/views/style.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 </head>
-
-<body style="background-color: rgb(68, 67, 67);">
-    <%- include('./includes/_navbar') %>
-
-        <div style="height: 100vh;width: 100%;
-background-size:cover;background-image:linear-gradient(rgba(0, 0, 0, 0.150),rgba(0, 0, 0, 0.1)),url('https://www.smartsmile.ca/wp-content/uploads/2019/07/iStock-689220014.jpg');">
+<body style="font-family: 'Poppins', sans-serif;background-image: linear-gradient(rgba(0, 0, 0, 0.100), rgba(0, 0, 0, 0)), url(https://www.smartsmile.ca/wp-content/uploads/2019/07/iStock-689220014.jpg);
+height: 120vh;background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	position:relative;">
+   
+    <header>
+        <div style="float: left;">
+            <img src="https://smilecenterspringdale.com/wp-content/uploads/2017/04/scs_logo_web_small.png" alt="" style=" width: 40%; ">
         </div>
+    
+    <div style="width: 1200px;">
+        
+       <ul style="float: right;list-style: none;margin-top: 30px;">
+<li style="display: inline-block;"><a href="/" style="	color: #fff;
+	text-decoration: none;
+	padding: 5px 20px;
+	font-family: poppins;
+	font-size: 16px;
+	text-transform: uppercase;">Home</a></li>
+<li style="display: inline-block;"><a href="/about" style="	color: #fff;
+	text-decoration: none;
+	padding: 5px 20px;
+	font-family: poppins;
+	font-size: 16px;
+	text-transform: uppercase;">About</a></li>
 
-        <div style="background-color :rgb(143, 84, 43);">
-            <p style="padding-top:2%;font-size: 37px; text-align: center; color:rgb(218, 218, 218);font-weight :400;">SMILE DENTAL CLINIC</p>
-            <div style="border: 7px solid #c78531; border-radius: 5px; margin-left: 20%; margin-right: 20%;"></div>
-            <br>
-            <p style="color:antiquewhite; text-align: center;">We care about customer care</p>
-            <br>
-        </div>
+<li style="display: inline-block;"><a href="/users/login"  style="	color: #fff;
+	text-decoration: none;
+	padding: 5px 20px;
+	font-family: poppins;
+	font-size: 16px;
+	text-transform: uppercase;">Login</a></li>
+   
+ </ul>
+
+ </div>
+ </header>
+
+ <div>
+   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <div style="width: 580px; padding: 10px; background-color: rgba(255, 255, 255, 0.5); margin: 0;border-radius: 10px;">
+    <p style="color: rgb(68, 67, 67);font-size: 36px;font-family: poppins; font-weight: 700;">Welcome to </p>
+    <p style="color: rgb(68, 67, 67);font-size: 36px;font-family: poppins; font-weight: 700;">Smile Dental Clinic.</p>
+    <h6 style="color:black;font-family: poppins;">Professional caring for all your dental needs</h6>
+    <br>
+    <div><button onclick="myFunction()" type="button" style="box-shadow: 2px 2px 2px 1px #282d32;width: 220px;height:40px; background-color:#12aeae; margin: 0;border-radius: 10px;color:white;">Request Appointment</button> &nbsp;&nbsp;&nbsp;
+       <a href="/contact" ><button href="/contact"  style="box-shadow: 2px 2px 2px 1px #282d32;width: 220px;height:40px; background-color:#282d32; margin: 0;border-radius: 10px;color:white;">Contact Us</button></a></div>
+    <br></div>
+  </div>
+<script>
+function myFunction() {
+  var elmnt = document.getElementById("swipe");
+  elmnt.scrollIntoView();
+}
+</script>
 
 
-        <div id="form-appoint" class="row mt-5">
-            <div>
-                <div>
-                    <h3 class="text-center mb-3" style="color:#c78531">
-                        <i class="fas fa-user-plus"></i> Make An Appointment
-                    </h3>
+<div class="row mt-7" style="padding-top:31%;">
+  <div>
+    <div class="section-head col-sm-14">
+      <img src="https://www.jasonshookdds.com/wp-content/uploads/2017/02/doctor-page.jpg" alt="" style=" width:50%; float:right;">
+      <p style="color: rgb(68, 67, 67);font-size: 37px;font-family: poppins; font-weight: 700;float:left;color: #12aeae">Smile Dental Clinic  </p><br>
+    
+  </div>
+  <p style="color:black;font-family: poppins;">We're glad you hand your dental health concerns to our skilled hands.<br>
+    We'll make sure to deliver the best possible healthcare to all our patients!We sincerely believe that visiting a dentist shouldn't be frightening or a stressful experience.<br>
+    We provide an equally comfortable experience of relaxation for all our young and adult customers!
+    Also we implement a lot of pain management and anesthesia options.<br>
+    <p style="font-weight: bold;color: #282d32">Everything we do is aimed for making you feel comfortable, while we take care of your oral healthcare.</p><br><br>
+</div>
 
-                    <form action="/appointment/api/submit" method="post">
-                        <div class="form-group">
-                            <label for="fname" style="color:white">First Name</label>
-                            <input type="text" id="name" name="fname" class="form-control" placeholder="Enter First Name" required/>
-                        </div>
-                        <div class="form-group">
-                            <label for="lname" style="color:white">Last Name</label>
-                            <input type="text" id="name" name="lname" class="form-control" placeholder="Enter Last Name" required/>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" style="color:white">Email</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="phone" style="color:white">Phone Number</label>
-                            <input type="phone" id="phone" name="phone" class="form-control" placeholder="Enter Phone Number" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="date" style="color:white">Date</label>
-                            <input type="date" id="date" name="date" class="form-control" placeholder="Add a date " />
-                        </div>
-                        <div class="form-group">
-                            <label for="hour" style="color:white">Hour</label>
-                            <input type="time" id="hour" name="time" min="08:00" max="18:00" class="form-control" placeholder="Add an hour " />
-                        </div>
+    <div>
+        <div id="swipe">
+            <p class="text-center mb-3" style="color: #12aeae; padding-top: 20px;font-size: 30px;font-family: poppins; font-weight: 700;float:left;">
+                Make An Appointment
+            </p>
 
-                        <button type="submit " class="btn btn-primary btn-block ">
-            Confirm
-          </button>
-                    </form>
-
+            <form action="/appointment/submit" method="post">
+                <div class="form-group">
+                    <label for="fname" style="color:white">First Name</label>
+                    <input type="text" id="name" name="fname" class="form-control" placeholder="Enter First Name" required/>
                 </div>
+                <div class="form-group">
+                    <label for="lname" style="color:white">Last Name</label>
+                    <input type="text" id="name" name="lname" class="form-control" placeholder="Enter Last Name" required/>
+                </div>
+                <div class="form-group">
+                    <label for="email" style="color:white">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" required />
+                </div>
+                <div class="form-group">
+                    <label for="phone" style="color:white">Phone Number</label>
+                    <input type="phone" id="phone" name="phone" class="form-control" placeholder="Enter Phone Number" required />
+                </div>
+                <div class="form-group">
+                    <label for="date" style="color:white">Date</label>
+                    <input type="date" id="date" name="date" class="form-control" placeholder="Add a date " />
+                </div>
+                <div class="form-group">
+                    <label for="hour" style="color:white">Hour</label>
+                    <input type="time" id="hour" name="time" min="08:00" max="18:00" class="form-control" placeholder="Add an hour " />
+                </div>
+
+                <button type="submit " class="btn btn-primary btn-block ">
+        Confirm
+      </button>
+            </form>
+
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+
+<style>
+
+a:active,
+a:focus {
+    color: #333;
+    text-decoration: none;
+    transition-timing-function: ease-in-out;
+    -ms-transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    -webkit-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    transition-duration: .2s;
+    -ms-transition-duration: .2s;
+    -moz-transition-duration: .2s;
+    -webkit-transition-duration: .2s;
+    -o-transition-duration: .2s;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+img {
+max-width: 100%;
+height: auto;
+}
+span, a, a:hover {
+display: inline-block;
+text-decoration: none;
+color: #12aeae;
+}
+.section-head {
+margin-bottom: 60px;
+}
+.section-head h4 {
+position: relative;
+padding:0;
+color:#12aeae;
+line-height: 1;
+letter-spacing:0.3px;
+font-size: 34px;
+font-weight: 700;  
+text-align:center;
+text-transform:none;
+margin-bottom:30px;
+}
+.section-head h4:before {
+content: '';
+width: 60px;
+height: 3px;
+background: #12aeae;
+position: absolute;
+left: 0px;
+bottom: -10px;
+right:0;  
+margin:0 auto;
+}
+.section-head h4 span {
+font-weight: 700;
+padding-bottom: 5px;
+color:#2f2f2f
+}
+p.service_text{
+color:#cccccc !important;
+font-size:16px;
+line-height:28px;
+text-align:center;    
+}
+.section-head p, p.awesome_line{
+color:#818181;
+font-size:16px;
+line-height:28px;
+text-align:center;  
+}
+
+.extra-text {
+font-size:34px;
+font-weight: 700;
+color:#2f2f2f;
+margin-bottom: 25px;
+position:relative;
+text-transform: none;
+}
+.extra-text::before {
+content: '';
+width: 60px;
+height: 3px;
+background: #12aeae;
+position: absolute;
+left: 0px;
+bottom: -10px;
+right: 0;
+margin: 0 auto;
+}
+.extra-text span {
+font-weight: 700;
+color:#12aeae;
+}
+.item {
+background: #fff;
+text-align: center;
+padding: 30px 25px;
+-webkit-box-shadow:0 0px 25px rgba(0, 0, 0, 0.07);
+box-shadow:0 0px 25px rgba(0, 0, 0, 0.07);
+border-radius: 20px;
+border:5px solid rgba(0, 0, 0, 0.07);
+margin-bottom: 30px;
+-webkit-transition: all .5s ease 0;
+transition: all .5s ease 0;
+transition: all 0.5s ease 0s;
+}
+.item:hover{
+background:#12aeae;
+box-shadow:0 8px 20px 0px rgba(0, 0, 0, 0.2);
+-webkit-transition: all .5s ease 0;
+transition: all .5s ease 0;
+transition: all 0.5s ease 0s;
+}
+.item:hover .item, .item:hover span.icon{
+background:#fff;
+border-radius:10px;
+-webkit-transition: all .5s ease 0;
+transition: all .5s ease 0;
+transition: all 0.5s ease 0s;
+}
+.item:hover h6, .item:hover p{
+color:#fff;
+-webkit-transition: all .5s ease 0;
+transition: all .5s ease 0;
+transition: all 0.5s ease 0s;
+}
+.item .icon {
+font-size: 40px;
+margin-bottom:25px;
+color: #12aeae;   
+width: 90px;
+height: 90px;
+line-height: 96px;
+border-radius: 50px;
+}
+.item .feature_box_col_one{
+background:rgba(247, 198, 5, 0.20);
+color:#12aeae
+}
+.item .feature_box_col_two{
+background:rgba(255, 77, 28, 0.15);
+color:#d6753d
+}
+.item .feature_box_col_three{
+background:rgba(0, 147, 38, 0.15);
+color:#12aeae
+}
+.item .feature_box_col_four{
+background:rgba(0, 108, 255, 0.15);
+color:#12aeae}
+.item .feature_box_col_five{
+background:rgba(146, 39, 255, 0.15);
+color:#12aeae
+}
+.item .feature_box_col_six{
+background:rgba(23, 39, 246, 0.15);
+color:#12aeae
+}
+.item p{
+font-size:15px;
+line-height:26px;
+}
+.item h6 {
+margin-bottom:20px;
+color:#2f2f2f;
+}
+.mission p {
+margin-bottom: 10px;
+font-size: 15px;
+line-height: 28px;
+font-weight: 500;
+}
+.mission i {
+display: inline-block;
+width: 50px;
+height: 50px;
+line-height: 50px;
+text-align: center;
+background: #12aeae;
+border-radius: 50%;
+color: #fff;
+font-size: 25px;
+}
+.mission .small-text {
+margin-left: 10px;
+font-size: 13px;
+color: #666;
+}
+.skills {
+padding-top:0px;
+}
+.skills .prog-item {
+margin-bottom: 25px;
+}
+.skills .prog-item:last-child {
+margin-bottom: 0;
+}
+.skills .prog-item p {
+font-weight: 500;
+font-size: 15px;
+margin-bottom: 10px;
+}
+.skills .prog-item .skills-progress {
+width: 100%;
+height: 10px;
+background: #e0e0e0;
+border-radius:20px;
+position: relative;
+}
+.skills .prog-item .skills-progress span {
+position: absolute;
+left: 0;
+top: 0;
+height: 100%;
+background: #12aeae;
+width: 10%;
+border-radius: 10px;
+-webkit-transition: all 1s;
+transition: all 1s;
+}
+.skills .prog-item .skills-progress span:after {
+content: attr(data-value);
+position: absolute;
+top: -5px;
+right: 0;
+font-size: 10px;
+font-weight:600;    
+color: #fff;
+background:rgba(0, 0, 0, 0.9);
+padding: 3px 7px;
+border-radius: 30px;
+}
+</style>
+<div class="feat bg-gray pt-5 pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="section-head col-sm-12">
+          <h4><span>Why Choose</span> Smile Dental Clinic</h4>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-globe"></i></span>
+            <h6>Appointments</h6>
+            <p>The first step towards a beautiful, healthy smile is to schedule an appointment. 
+                Please contact our office by phone or complete the appointment request form above.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-anchor"></i></span>
+            <h6>The Best Prices</h6>
+            <p>Excellent care and high quality implant teeth at a price that anyone can afford, making dental
+                implant costs more accessible.Finally, great quality with a great price !
+                </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-hourglass-half"></i></span>
+            <h6>Expertise</h6>
+            <p>Our team of many professionals have trained in Morocco and abroad, creating a highly
+                skilled and friendly team to best serve out patients' needs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="footer-dark">
+    <footer>
+        <div class="container">
+            <div style="padding-left: 50%;">
+           
+                <a href="https://www.facebook.com"><em class="fa fa-facebook">&nbsp</em></a>
+                <a href="https://www.instagram.com" ><em class="fa fa-instagram">&nbsp</em></a>
+                <a href="https://www.google.com"><em class="fa fa-snapchat-ghost"></em>&nbsp</a>
+                <a href="https://www.gmail.com"><em class="fa fa-google"></em>&nbsp</a>
+           
             </div>
+            <p style="padding-left: 6%;"class="copyright">Smile Dental Clinic © 2021</p>
         </div>
-        <div>
-            <br>
-        </div>
+    </footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+<style>
+.footer-dark {
+  padding:20px 0;
+  color:#f0f9ff;
+  background-color:#282d32;
+}
+.footer-dark ul a:hover {
+  opacity:0.8;
+}
+.footer-dark .copyright {
+  text-align:center;
+  padding-top:24px;
+  opacity:0.3;
+  font-size:13px;
+  margin-bottom:0;
+}
+</style>
 </body>
 
 </html>

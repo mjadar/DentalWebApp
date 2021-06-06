@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap");
 
 *
 {
@@ -12,15 +12,21 @@ font-family: 'Poppins', sans-serif;
 {
 position: relative;
 min-height: 100vh;
-padding: 50px 100px;
+padding: 50px 140px;
 display: flex;
-justify-content: center;
-align-items: center;
+justify-content: left;
+align-items: left;
 flex-direction: column;
 }
 
 body{
-background-color: rgb(68, 67, 67);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.800), rgba(0, 0, 0, 0)), url(https://www.smartsmile.ca/wp-content/uploads/2019/07/iStock-689220014.jpg);
+    background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      background-size: cover;
+      background-position: center center;
+      position: relative;
+      height: 120vh;
 }
 
 .contact .content {
@@ -46,7 +52,7 @@ width: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
-margin-top: 30px;
+margin-top: 50px;
 }
 
 .container .contactInfo{
@@ -86,12 +92,12 @@ font-weight: 300;
 .container .contactInfo .box .text h3 
 {
 font-weight: 500;
-color:#00bcd4;
+color:#12aeae;
 }
 
 .contactForm 
 {
-width: 45%;
+width: 350px;
 padding: 40px;
 background: #fff;
 }
@@ -128,7 +134,7 @@ resize: none;
 position: absolute;
 left: 0;
 padding: 5px 0;
-font-size: 16px;
+font-size: 14px;
 margin: -5px 0;
 pointer-events: none;
 transition: 0.5s;
@@ -137,15 +143,15 @@ color: #666;
 
 .contactForm .inputBox input span 
 {
-color: #e91e63;
-font-size: 12px;
+color: #12aeae;
+font-size: 7px;
 }
 .contactForm .inputBox input:focus ~ span,
 .contactForm .inputBox input:valid ~ span,
 .contactForm .inputBox textarea:focus ~ span,
 .contactForm .inputBox textarea:valid ~ span 
 {
-color: #e91e63;
+color: #12aeae;
 font-size: 12px;
 transform: translate(-20px);
 }
@@ -153,11 +159,16 @@ transform: translate(-20px);
 .contactForm .inputBox input[type="submit"]
 {
 width: 150px;
-background: #00bcd4;
+background: #12aeae;
 color: #fff;
 border: none;
 cursor: pointer;
 padding: 10px;
-font-size: 18px;
+font-size: 14px;
 }
 
+.logo {
+  margin-top: -795px;
+  margin-left: 0px;
+ 
+}
